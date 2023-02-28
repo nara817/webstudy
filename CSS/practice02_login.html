@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 500px;
+        }
+        .login_wrap {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .left_wrap {
+            border: 1px solid gray; /* 다 만들고 나서는 지우기!*/
+            width: 6%; /*flex:2; 와 흡사*/
+        }
+        .right_wrap {
+            border: 1px solid gray; /* 다 만들고 나서는 지우기!*/
+            width: 33%; /*flex:1; 와 흡사*/
+            text-align: center;
+            background-color: gray;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <form method="post" action="/">
+        <div class="login_wrap">
+            <div class="left_wrap">
+                <div class="id_wrap">
+                    <div class="icon_wrap">아이콘</div>
+                    <i class="fa-solid fa-key"></i>
+                    <!-- <div class="input_wrap">입력상자</div> -->
+                    <input type="text" class="input_wrap" placeholder="Username">
+                </div>
+            </div>
+            <div class="pw_wrap">
+                <div class="icon_wrap">아이콘</div>
+                <i class="fa-solid fa-user"></i>
+                <!-- <div class="input_wrap">입력상자</div> -->
+                <input type="password" class="pw_wrap" placeholder="● ● ● ●">
+            </div>
+            <!-- <div class="right_wrap">로그인</div> -->
+            <input type="button" class="right_wrap" value="로그인">
+        </div>
+      </form>
+    </div>
+</body>
+</html>
