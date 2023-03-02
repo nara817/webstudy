@@ -107,10 +107,26 @@
     </div>
     <script>
         var inp = document.getElementById('inp');
-        // inp.removeAttribute('readonly')
-        inp.readOnly = false;
+        // inp.removeAttribute('readonly')  attribute  이용
+        inp.readOnly = false;             // property  이용
     </script>
 
+    <style>
+        .red_text {
+            color :red;
+        }
+        .blue_text {
+            color: blue;
+        }
+    </style>
+    <div id="box7" class="red_text">Hello World</div>
+    <script>
+        // 파란색으로 바꾸기
+        // var box7 = document.getElementById('box7');
+        // box7.style.color = 'blue'; /*attribute  이용하기*/
+        // box7.setAttribute('class','blue_text'); /*attribute  이용하기*/
+        box7.className = 'blue_text';
+    </script>
 
 
 </body>
