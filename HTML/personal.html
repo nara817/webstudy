@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+      <table>
+        <tr>
+            <td>
+            <label for="email">
+                이메일
+                <input type="text" id="email">
+                </label>
+        <span>@</span>
+        <input type="text" placeholder="선택 또는 직접입력" list="site">
+        <datalist id="site">
+            <option value="naver.com"></option>
+            <option value="kakao.com"></option>
+            <option value="gmail.com"></option>
+        </datalist>
+    </td>
+    </tr>
+    <tr>
+        <label for="date">
+        <td>
+        생일
+            <input type="text" size="4" maxlength="4">년
+            <input type="text" size="2" maxlength="2">월
+            <input type="text" size="2" maxlength="2">일
+        </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="city">
+                거주도시
+                <select>
+                    <option> 서울 </option>
+                    <option> 광주 </option>
+                    <option> 대구 </option>
+                    <option> 대전 </option>
+                    <option> 부산 </option>
+                    <option> 울산 </option>
+                    <option> 인천 </option>
+                    <option> 기타 </option>
+                </select>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="m">
+                성별
+                <input type="radio" id="m" name="gender">남자
+            </label>
+            <label for="w">
+                <input type="radio" id="w" name="gender">여자
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="tr">
+                관심분야
+                <input type="checkbox" id="tr">여행
+            </label>  
+            <label for="mo">
+                <input type="checkbox" id="mo">영화
+            </label>  
+            <label for="re">
+                <input type="checkbox" id="re">독서
+            </label>  
+            <label for="mu">
+                <input type="checkbox" id="mu">음악
+            </label>  
+            <label for="no">
+                <input type="checkbox" id="no">관심없음
+            </label>  
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="int">
+            자기소개
+            <textarea rows="5" cols="50" style="vertical-align:middle"></textarea></h3>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+
+            <label for="log">
+                <input type="submit" value="수정완료">
+            </label>
+        </td>
+    </tr>
+      </table>  
+    </form>
+    
+</body>
+</html>
