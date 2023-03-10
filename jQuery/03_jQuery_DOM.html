@@ -57,10 +57,10 @@
             console.log($('#watchar').prevAll());        // 이전 모든 형제
 
             // 6. 부모
-            console.log($('netflex').parents());    // 모든 부모
-            console.log($('netflex').parent());     // 부모
-            console.log($('netflex').parent().parent);// 부모의 부모
-            console.log($('netflex').closest('div')); // 가장 가까운 <div> 부모
+            console.log($('#netflex').parents());          // 모든 부모
+            console.log($('#netflex').parent());           // 부모
+            console.log($('#netflex').parent().parent());  // 부모의 부모
+            console.log($('#netflex').closest('div'));     // 가장 가까운 div 부모
         });
         /*
             메소드 체이닝(method chaining)
@@ -87,48 +87,52 @@
     $(function(){
 
         // type으로 지정하기
-        console.log ($('input[type=text]')); // input type=text
-        console.log ($('#frm :text'));           // input type=text
-        console.log ($('#frm :password'));       // input type=password
-        console.log ($('#frm :radio'));          // input type=radio
+        console.log($('input[type=text]'));  // input type=text
+        console.log($(':text'));             // input type=text
+        console.log($(':password'));         // input type=password
+        console.log($(':radio'));            // input type=radio
+        console.log($('#frm :text'));        // input type=text
+        console.log($('#frm :password'));    // input type=password
+        console.log($('#frm :radio'));       // input type=radio
         
         // 상태로 지정하기(:focus, :checked, : selected) -> :로 필터링한다고 생각하면됨
-        console.log ($('#frm :focus'));          //
-        console.log ($('#frm :checked'));        //
-        console.log ($('#frm :radio:checked'));  // 대상 제한주기(from 밑에 있는 radio 중에서 check된거)
-        console.log ($('#frm :selected'));       //
+        console.log($('#frm :focus'));         // 포커스를 가진 요소
+        console.log($('#frm :checked'));    // from 밑에 있는 radio 중에서 check된 요소(radio, checkbox, select)
+        console.log($('#frm :selected'));       //
 
         // 상태 확인 메소드
         // is(':focus')    : 포커스를 가졌다면 true반환
         // is(':checked')  : 체스되었다면 true반환
         // is(':selected') : 선택되었다면 true반환
         $('#frm :text').focus();
-        if($('#frm:text').is(':focus')) {
-            console.log('text가 포커스를 가졌다.')
-        } else {
-            console.log('text가 포커스를 가지지 않았다.')
-        }
+            if($('#frm :text').is(':focus')){
+                console.log('text가 포커스를 가졌다.');
+            } else {
+                console.log('text가 포커스를 가지지 않았다.');
+            }
 
-    });
-</script>
-<div class="container">
-    <form id ="frm">
-        <div><input type="text"></div>
-        <div><input type="password"></div>
-        <div>
-            <input type="radio" name="gender" value="male">남
-            <input type="radio" name="gender" value="female">여
-            <input type="radio" name="gender" value="none" checked>선택안함
-        </div>
-        <div>
-            <select>
-                <option value="">선택</option>
-                <option value="02" selected>02</option>
-                <option value="031">031</option>
-                <option value="032">032</option>
-            </select>
-        </div>
-    </form>
-</div>
+        });
 
+    </script>
+    <div class="container">
+        <form id="frm">
+            <div><input type="text"></div>
+            <div><input type="password"></div>
+            <div>
+                <input type="radio" name="gender" value="male">남
+                <input type="radio" name="gender" value="female">여
+                <input type="radio" name="gender" value="none" checked>선택안함
+            </div>
+            <div>
+                <select>
+                    <option value="">선택</option>
+                    <option value="02" selected>02</option>
+                    <option value="031">031</option>
+                    <option value="032">032</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+</body>
 </html>
