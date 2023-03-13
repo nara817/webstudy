@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,9 @@
     <title>Document</title>
     <script src="../resources/js/lib/jquery-3.6.4.min.js"></script>
 </head>
+
 <body>
-    
+
     <div id="box1">BOX1</div>
     <script>
 
@@ -34,12 +36,12 @@
 
         // 3. css() == style
         $('#box3').css('color', '#c8c8c8')
-                  .css('font-size', '32px');
+            .css('font-size', '32px');
         $('#box3').css({
             'background-color': '#181818',
             'text-align': 'center'
         });
-        
+
     </script>
 
     <div>
@@ -81,19 +83,19 @@
                 3) 자식.prependTo(부모) : 첫 번째 자식으로 추가하기
                 4) 자식.appendTo(부모)  : 마지막 자식으로 추가하기
         */
-        
+
         var menu = $('#menu');
-        
+
         menu.prepend('<li id="cheese">치즈</li>');
         menu.append('<li id="pizza">피자</li>');
         menu.prepend($('<li>').attr('id', 'beef').text('소고기'));
         menu.append($('<li>').attr('id', 'pork').text('돼지고기'));
-        
+
         $('<li id="americano">아메리카노</li>').prependTo(menu);
         $('<li id="latte">라떼</li>').appendTo(menu);
         $('<li>').attr('id', 'chicken').text('치킨').prependTo(menu);
         $('<li>').attr('id', 'hamburger').text('햄버거').appendTo(menu);
-        
+
         /*
             2. 형제 관계로 추가하기(앞뒤)
                 1) 형제.before(형제) : 이전 형제로 추가하기
@@ -120,6 +122,86 @@
         $('#movies').empty();  // #movies 자체는 삭제되지 않고 남는다. /// #movies 자체는 삭제되지 않고 남는다.(movies 하위요소만 삭제되는거임, 새로운 데이터가 들어 올 수 있도록)
 
     </script>
+    <div>
+        <form id="frm">
+            <div>
+                <input type="text" placeholder="아이디">
+            </div>
+            <div>
+                <input type="password" placeholder="비밀번호">
+            </div>
+            <div>
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="male">남자</label>
+                <input type="radio" name="gender" value="fmale" id="fmale">
+                <label for="fmale">여자</label>
+                <input type="radio" name="gender" value="none" id="none" checked>
+                <label for="none">선택안함</label>
+            </div>
+            <div>
+                <select>
+                    <option value="">선택하세요</option>
+                    <option value="서울">서울</option>
+                    <option value="경기" selected>경기</option>
+                    <option value="인천">인천</option>
+                </select>
+            </div>
+            <div>
+                <textarea>Hello World</textarea>
+            </div>
+            <script>
+                // input type=text
+                $('#frm :text').css('background-color', 'silver'); // #frm(공백=후손표시)   
+                $('#frm :text').prop('value','admin');  
+                $('#frm :text').val('master'); //입력된 입력 값을 조작하는 val 메소드  
+                
+                // input type=password
+                $('#frm :password').val('1234');
+
+                // input type=radio
+                console.log ($('#frm :radio').val()); // 첫번째 radio의 value
+                console.log ($('#frm :radio:checked').val()); // 체크된 radio의 value
+
+                // select
+                console.log ($('#frm select').val()); // 선택된 option의 value
+
+                // textarea
+                console.log($('#frm textarea').text());   // textarea는 val()를 사용하지 않고, text()를 사용한다.
+                $('#frm textarea').text('Hello jQuery');
+            </script>
+            <style>
+                .big-text{
+                    font-size: 2em;
+                }
+                .red-text{
+                    color: red;
+                }
+            </style>
+            <div id="box4" class="invisible">
+                Hello World
+            </div>
+            <script>
+
+                //  class 속성 추가
+                $('#box4').addClass('big-text').addClass('red-text'); // 메소드체이닝
+                $('#box4').addClass('big-text red-text'); // 공백으로  class 구분
+                
+                //  class 속성 제거
+                $('#box4').removeClass('big-text').removeClass('red-text');
+                $('#box4').removeClass('red-text red-text');
+
+                // class 속성 토글(추가와 제거가 번갈아가면서 적용)
+                $('#box4').toggleClass('big-text').toggleClass('big-text');
+                $('#box4').toggleClass('red-text').toggleClass('red-text');
+
+                // class 속성 확인
+                if($('#box4').hasClass('invisible')){
+                $('#box4').css('opacity','0');
+                }
+            </script>
+        </form>
+    </div>
 
 </body>
+
 </html>
