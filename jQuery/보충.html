@@ -42,9 +42,9 @@
 
     <div id="box2">
         <div>
-        <button id="btn_prev">이전</button>
-        <span id="image_no"></span>
-        <button id="btn_next">다음</button>
+        <button id="btn_prev" class="btn_move" data-value="-1">이전</button>
+        <span id="image_no" class="btn_move"></span>
+        <button id="btn_next" class="btn_move" data-value="+1">다음</button>
     </div>
     <div id="image_box"></div>
 
@@ -57,6 +57,9 @@
         background-size: 100% 100%; /* 박스와 동일한 -> 크기 너비 높이 그대로 적용*/
         background-repeat: no-repeat; /* 반복 여부 -> 반복X */
 
+    }
+    .btn_move:hover{
+        background-color: teal;
     }
 
 </style>
@@ -73,7 +76,7 @@
     }
     
     // 이미지 변경 함수
-    function fnSlideImage(n){
+    function fnImageSlide(n){
         i += n;
         // i%= imageList.length;
         if(i == imageList.length) {
@@ -83,8 +86,22 @@
         }
         fnImageDisplay();
     }
+    // 이동버튼의(이전버튼 + 다음 버튼) click 이벤트 (data- 속성을 활용하기) <방법2>
+    $('#.btn_move').click(function(event){
+        fnImageSlide($(this).data('value'));
+    });
 
-    // 이전 버튼 click 이벤트
+    // 이동버튼의(이전버튼 + 다음 버튼) click 이벤트 <방법1>
+    /*
+    $('#.btn_move').click(function(event){
+        if($(this).text() == '이전'){ // this는 이동 버튼 (이전 버튼을 눌렀다면 this가 이전 이고, 다음 버튼을 누르면 this가 다음이 됨)
+            fnImageSlide(-1);
+        } else {
+            fnImageSlide(+1);
+        }
+        });
+        */
+    /* 이전 버튼 click 이벤트
     $('#btn_prev').click(function(event){
         fnSlideImage(-1);
     })
@@ -92,6 +109,7 @@
     $('#btn_next').click(function(event){
         fnSlideImage(+1);
     })
+    */
 
 
     // 함수 호출
